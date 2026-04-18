@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>CodeHive</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div id="login">
+  <h2>Login</h2>
+  <input id="user" placeholder="Username">
+  <input id="pass" type="password" placeholder="Password">
+  <button onclick="login()">Login</button>
+</div>
+
+<div id="dashboard" style="display:none;">
+  <h1>Dashboard</h1>
+
+  <marquee>Welcome to our dashboard</marquee>
+
+  <button onclick="openAdmin()">Admin</button>
+
+  <div class="tabs">
+    <button onclick="show('home')">Home</button>
+    <button onclick="show('chat')">Chat</button>
+  </div>
+
+  <div id="home">
+    <h3>Members Active: 5</h3>
+  </div>
+
+  <div id="chat" style="display:none;">
+    <ul id="messages"></ul>
+    <input id="msg">
+    <button onclick="send()">Send</button>
+  </div>
+</div>
+
+<!-- ADMIN -->
+<div id="adminLogin" style="display:none;">
+  <input type="password" id="adminPass" placeholder="Admin password">
+  <button onclick="adminLogin()">Enter</button>
+</div>
+
+<div id="adminPanel" style="display:none;">
+  <h2>Admin Panel</h2>
+  <ul id="userList"></ul>
+  <ul id="adminMessages"></ul>
+  <button onclick="back()">Back</button>
+</div>
+
+<script src="/socket.io/socket.io.js"></script>
+<script src="app.js"></script>
+
+</body>
+</html>
